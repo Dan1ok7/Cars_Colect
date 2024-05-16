@@ -1,0 +1,45 @@
+﻿<Window x:Class="Cars_Colect.CarDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Деталі автомобіля" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Марка:" Margin="5"/>
+        <TextBlock Text="{Binding Brand}" Grid.Row="0" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Модель:" Grid.Row="1" Margin="5"/>
+        <TextBlock Text="{Binding Model}" Grid.Row="1" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Рік випуску:" Grid.Row="2" Margin="5"/>
+        <TextBlock Text="{Binding Year}" Grid.Row="2" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Колір:" Grid.Row="3" Margin="5"/>
+        <TextBlock Text="{Binding Color}" Grid.Row="3" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Вид палива:" Grid.Row="4" Margin="5"/>
+        <TextBlock Text="{Binding FuelType}" Grid.Row="4" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Об'єм двигуна (л):" Grid.Row="5" Margin="5"/>
+        <TextBlock Text="{Binding EngineVolume}" Grid.Row="5" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Він код:" Grid.Row="6" Margin="5"/>
+        <TextBlock Text="{Binding VinCode}" Grid.Row="6" Margin="140 5 5 5"/>
+
+        <TextBlock Text="Реєстраційний номер:" Grid.Row="7" Margin="5"/>
+        <TextBlock Text="{Binding LicensePlate}" Grid.Row="7" Margin="140 5 5 5"/>
+
+        <!-- Зображення -->
+        <Image Source="{Binding Image}" Grid.Row="8" Margin="5" MaxHeight="200" MaxWidth="300"/>
+    </Grid>
+</Window>
