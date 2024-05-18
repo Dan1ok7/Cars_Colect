@@ -1,0 +1,47 @@
+﻿<Window x:Class="Cars_Colect.EditCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редагування автомобіля" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Марка:" Grid.Row="0" Margin="5"/>
+        <TextBox Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Margin="5"/>
+
+        <Label Content="Модель:" Grid.Row="1" Margin="5"/>
+        <TextBox Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Margin="5"/>
+
+        <Label Content="Рік:" Grid.Row="2" Margin="5"/>
+        <TextBox Text="{Binding Year, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Margin="5"/>
+
+        <Label Content="Колір:" Grid.Row="3" Margin="5"/>
+        <TextBox Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Margin="5"/>
+
+        <Label Content="Тип палива:" Grid.Row="4" Margin="5"/>
+        <TextBox Text="{Binding FuelType, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Margin="5"/>
+
+        <Label Content="Об'єм двигуна:" Grid.Row="5" Margin="5"/>
+        <TextBox Text="{Binding EngineVolume, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Margin="5"/>
+
+        <Label Content="Vin-код:" Grid.Row="6" Margin="5"/>
+        <TextBox Text="{Binding VinCode, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Margin="5"/>
+
+        <Label Content="Ліцензійний номер:" Grid.Row="7" Margin="5"/>
+        <TextBox Text="{Binding LicensePlate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Margin="5"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button Content="Зберегти" Click="Save_Click" Margin="5"/>
+            <Button Content="Скасувати" Click="Cancel_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

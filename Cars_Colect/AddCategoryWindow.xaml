@@ -1,0 +1,33 @@
+﻿<Window x:Class="Cars_Colect.AddCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Додати категорію" Height="280" Width="400">
+    <Grid Background="#FFE5E5E5">
+        <!-- Поля вводу -->
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="txtCategoryName" Grid.Row="0" Margin="0 0 0 5" VerticalAlignment="Center" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Назва категорії" Tag="Назва категорії"/>
+
+            <TextBox x:Name="txtCategoryDescription" Grid.Row="1" Margin="0 0 0 5" VerticalAlignment="Center" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Додайте опис категорії" Tag="Додайте опис категорії"/>
+
+            <!-- Зображення зразка -->
+            <Image x:Name="imgSample" Grid.Row="3" Margin="0 30 0 5" Stretch="Uniform" Width="100" Height="100" Source="images/sampleimage.jpg"/>
+
+            <!-- Кнопки -->
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 5">
+                <Button Content="Створити" Click="Add_Click" Margin="5" Width="100" Height="30" Background="#FF4CAF50" Foreground="White" FontWeight="Bold"/>
+                <Button Content="Додати зображення" Click="AddImage_Click" Margin="5" Width="150" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Cars_Colect.AddCarWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Додати автомобіль" Height="400" Width="400">
+        Title="Додати автомобіль" Height="420" Width="400">
     <Grid Background="#FFE5E5E5">
         <!-- Поля вводу -->
         <Grid Margin="10">
@@ -38,7 +38,7 @@
 
             <TextBox x:Name="txtVinCode" Grid.Row="7" Margin="0 0 0 5" VerticalAlignment="Center" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
 
-            <TextBox x:Name="txtLicensePlate" Grid.Row="8" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Center" VerticalAlignment="Top" Width="380" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtLicensePlate" Grid.Row="8" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Center" VerticalAlignment="Top" Width="376" Margin="0,0,0,5"/>
 
             <!-- Зображення зразка -->
             <Image x:Name="imgSample" Grid.Row="8" Margin="0 30 0 5" Stretch="Uniform" Width="100" Height="100" Source="images/sampleimage.jpg"/>

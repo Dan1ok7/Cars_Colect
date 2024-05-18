@@ -12,11 +12,14 @@ namespace Cars_Colect
     {
         public ObservableCollection<Car> Cars_Colect { get; set; }
 
-        public MainWindow()
+        private CategoryMenuWindow _categoryMenuWindow; // Поле для зберігання посилання на CategoryMenuWindow
+
+        public MainWindow(CategoryMenuWindow categoryMenuWindow) // Додайте параметр у конструктор
         {
             InitializeComponent();
             DataContext = this;
             Cars_Colect = new ObservableCollection<Car>();
+            _categoryMenuWindow = categoryMenuWindow; // Зберігаємо посилання на існуючий екземпляр CategoryMenuWindow
         }
 
         private void Details_Click(object sender, RoutedEventArgs e)
@@ -31,6 +34,28 @@ namespace Cars_Colect
             detailsWindow.ShowDialog();
         }
 
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            // Отримуємо вибраний автомобіль
+            Car selectedCar = (sender as Button).Tag as Car;
+
+            // Створюємо вікно редагування даних автомобіля і передаємо вибраний автомобіль
+            EditCarWindow editCarWindow = new EditCarWindow(selectedCar);
+
+            // Показуємо вікно редагування
+            editCarWindow.ShowDialog();
+
+            // Оновлюємо інтерфейс після закриття вікна редагування, якщо внесені зміни
+            if (editCarWindow.DialogResult == true)
+            {
+                // Оновлюємо відповідний автомобіль у колекції
+                int index = Cars_Colect.IndexOf(selectedCar);
+                if (index != -1)
+                {
+                    Cars_Colect[index] = editCarWindow.ModifiedCar;
+                }
+            }
+        }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +85,12 @@ namespace Cars_Colect
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void ReturnToCategories_Click(object sender, RoutedEventArgs e)
+        {
+            _categoryMenuWindow.Show(); // Використовуємо існуючий екземпляр CategoryMenuWindow замість створення нового
+            this.Hide();
         }
     }
 

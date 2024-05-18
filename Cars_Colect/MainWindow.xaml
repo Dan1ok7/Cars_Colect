@@ -10,12 +10,18 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Кнопка "Повернутись до категорій" -->
+        <Button Content="Повернутись до категорій" Click="ReturnToCategories_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,5"
+        Background="Gray" Foreground="White" BorderBrush="Gray"
+        Margin="10">
+        </Button>
+
         <!-- Контейнер для елементів колекції -->
-        <ScrollViewer Grid.Row="0">
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding Cars_Colect}">
                     <ItemsControl.ItemsPanel>
@@ -46,6 +52,7 @@
                                         <TextBlock Text="{Binding Brand}" FontWeight="Bold" />
                                         <TextBlock Text="{Binding Model}" />
                                         <Button Content="Деталі" Tag="{Binding}" Margin="0,5,0,0" Click="Details_Click"/>
+                                        <Button Content="Редагувати" Tag="{Binding}" Margin="0,5,0,0" Click="Edit_Click" Background="#FF4081"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>
@@ -58,7 +65,7 @@
         <!-- Кнопка "Додати" -->
         <Button Content="Додати" Click="Add_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,5"
                 Background="Green" Foreground="White" BorderBrush="Green"
-                Grid.Row="0" Margin="10">
+                Grid.Row="0" Grid.Column="1" Margin="10">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
